@@ -1,4 +1,4 @@
-package jornadamilhas.api.depoimentos;
+package jornadamilhas.api.destinos;
 
 
 import jakarta.persistence.*;

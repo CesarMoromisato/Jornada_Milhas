@@ -1,4 +1,4 @@
-package jornadamilhas.api.depoimentos;
+package jornadamilhas.api.destinos;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
