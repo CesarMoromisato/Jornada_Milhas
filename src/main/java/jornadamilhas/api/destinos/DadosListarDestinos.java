@@ -1,6 +1,6 @@
 package jornadamilhas.api.destinos;
 
-public record DadosListagemDestinos(
+public record DadosListarDestinos(
 
         Long id,
         String foto1,
@@ -10,7 +10,7 @@ public record DadosListagemDestinos(
         String textodescritivo
 ) {
 
-    public DadosListagemDestinos(Destinos destinos){
+    public DadosListarDestinos(Destinos destinos){
         this(destinos.getId(), destinos.getFoto1(), destinos.getFoto2(), destinos.getNome(), destinos.getMeta(), destinos.getTextodescritivo());
     }
 }

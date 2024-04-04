@@ -30,4 +30,19 @@ public class Destinos {
         this.meta = dados.meta();
         this.textodescritivo = dados.textodescritivo();
     }
+
+    public void atualizarInformacoes(DadosAtualizarDestinos dados) {
+        if(dados.foto1() != null){
+            this.foto1 = dados.foto1();
+        }
+        if(dados.foto2() != null){
+            this.foto2 = dados.foto2();
+        }
+        if(dados.meta() != null){
+            this.meta = dados.meta();
+        }
+        if(dados.textodescritivo() != null){
+            this.textodescritivo = dados.textodescritivo();
+        }
+    }
 }

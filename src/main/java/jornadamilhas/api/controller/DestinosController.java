@@ -2,11 +2,11 @@ package jornadamilhas.api.controller;
 
 
 import jakarta.validation.Valid;
-import jornadamilhas.api.destinos.DadosCriarDestino;
-import jornadamilhas.api.destinos.DadosListagemDestinos;
-import jornadamilhas.api.destinos.DestinoRepository;
-import jornadamilhas.api.destinos.Destinos;
+import jornadamilhas.api.destinos.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,8 +27,14 @@ public class DestinosController {
     }
 
     @GetMapping
-    public List<DadosListagemDestinos> listar(){
-        return repository.findAll().stream().map(DadosListagemDestinos::new).toList();
+    public Page<DadosListarDestinos> listar(@PageableDefault(sort = {"nome"}) Pageable paginacao){
+        return repository.findAll(paginacao).map(DadosListarDestinos::new);
     }
 
+    @PutMapping
+    @Transactional
+    public void atualizar(@RequestBody @Valid DadosAtualizarDestinos dados){
+        var destinos = repository.getReferenceById(dados.id());
+        destinos.atualizarInformacoes(dados);
+    }
 }
