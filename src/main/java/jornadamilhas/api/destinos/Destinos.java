@@ -22,6 +22,7 @@ public class Destinos {
     private String nome;
     private String meta;
     private String textodescritivo;
+    private Boolean ativo;
 
     public Destinos(DadosCriarDestino dados){
         this.foto1 = dados.foto1();
@@ -29,6 +30,7 @@ public class Destinos {
         this.nome = dados.nome();
         this.meta = dados.meta();
         this.textodescritivo = dados.textodescritivo();
+        this.ativo = true;
     }
 
     public void atualizarInformacoes(DadosAtualizarDestinos dados) {
@@ -44,5 +46,9 @@ public class Destinos {
         if(dados.textodescritivo() != null){
             this.textodescritivo = dados.textodescritivo();
         }
+    }
+
+    public void excluir() {
+        this.ativo = false;
     }
 }
