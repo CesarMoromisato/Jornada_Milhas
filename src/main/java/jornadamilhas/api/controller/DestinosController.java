@@ -1,6 +1,7 @@
 package jornadamilhas.api.controller;
 
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import jornadamilhas.api.domain.destinos.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("/destinos")
+@SecurityRequirement(name="bearer-key")
 public class DestinosController {
 
     @Autowired
