@@ -1,4 +1,4 @@
-package jornadamilhas.api.destinos;
+package jornadamilhas.api.domain.destinos;
 
 import jakarta.validation.constraints.NotNull;
 
