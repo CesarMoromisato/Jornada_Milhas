@@ -9,4 +9,4 @@ Projeto desenvolvido para o aprendizado e aplicação de conhecimentos de java e
 - MySql
 - Spring Doc
 - Auth0
-
+- API Rest
